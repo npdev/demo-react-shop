@@ -15,12 +15,13 @@ export const UserProvider = ({children}) => {
   const value = {currentUser, setCurrentUser};
 
   useEffect(() => {
-    onAuthStateChangedListener(async (user) => {
+    const unsubscribe = onAuthStateChangedListener(async (user) => {
       if (user) {
         await createUserDocumentFromAuth(user);
       }
       setCurrentUser(user);
     });
+    return unsubscribe;
   }, []);
 
   return (
