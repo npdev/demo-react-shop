@@ -30,6 +30,7 @@ export const Quantity = styled(BaseSpan)`
 
 export const Arrow = styled.div`
   margin: 0 10px;
+  cursor: pointer;
 `;
 
 
