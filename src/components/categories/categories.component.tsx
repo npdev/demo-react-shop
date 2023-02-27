@@ -1,8 +1,17 @@
+import {Key} from 'react';
+
 import CategoriesItem from "../categories-item/categories-item.component";
 
 import {CategoriesContainer} from './categories.styles';
 
-const CATEGORIES = [
+export type CategoriesCategory = {
+  id: Key;
+  title: string;
+  imageUrl: string;
+  route: string;
+}
+
+const CATEGORIES: CategoriesCategory[] = [
   {
     id: 1,
     title: "hats",
