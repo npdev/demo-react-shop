@@ -2,12 +2,13 @@ import React from 'react';
 import {Provider} from 'react-redux';
 import ReactDOM from 'react-dom/client';
 import {BrowserRouter} from 'react-router-dom';
-import {PersistGate} from 'redux-persist/integration/react';
 import {Elements} from '@stripe/react-stripe-js';
-import {stripePromise} from './utils/stripe/stripe.utils';
+import {PersistGate} from 'redux-persist/integration/react';
 
 import App from './App';
 import {store, persistor} from './store/store';
+import {stripePromise} from './utils/stripe/stripe.utils';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 import './index.scss';
 
@@ -25,3 +26,5 @@ root.render(
     </Provider>
   </React.StrictMode>
 );
+
+serviceWorkerRegistration.register();
